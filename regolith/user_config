@@ -1,0 +1,18 @@
+! Teams notifications
+no_focus [title="Microsoft Teams Notification"]
+for_window [title="Microsoft Teams Notification"] floating enable
+
+! Custom shortcuts
+bindsym --release control+shift+dead_grave exec --no-startup-id /bin/bash /home/cmg/Tools/tools-and-config/Scripts/pastepswd R
+obotbil12
+
+! Workspace screen assignment
+!set_from_resource $big_screen big_screen DP-2
+!set_from_resource $laptop_screen laptop_screen eDP-1-1
+!workspace number $ws1 output $big_screen
+!workspace number $ws2 output $laptop_screen
+!workspace number $ws3 output $big_screen
+!workspace number $ws4 output $laptop_screen
+
+! Fix VPN launching
+exec --no-startup-id /usr/bin/nm-applet

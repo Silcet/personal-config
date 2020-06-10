@@ -1,0 +1,17 @@
+! -- Styles - Colors
+#include "/etc/regolith/styles/lascaille/color"
+
+! -- Styles - Fonts
+#include "/home/cmg/.config/regolith/styles/lascaille/typeface"
+
+! -- Styles - Theme
+#include "/etc/regolith/styles/lascaille/theme"
+
+! -- Applications
+! These files map values defined above into specific app settings.
+#include "/etc/regolith/styles/lascaille/st-term"
+#include "/home/cmg/.config/regolith/styles/urxvt"
+#include "/home/cmg/.config/regolith/styles/i3-wm-nopango"
+#include "/etc/regolith/styles/i3xrocks"
+#include "/etc/regolith/styles/rofi"
+#include "/etc/regolith/styles/gnome"

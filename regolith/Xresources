@@ -1,0 +1,4 @@
+! -- Styles - i3-wm
+i3-wm.bar.position:                 top
+i3-wm.bar.trayoutput:               primary
+!i3-wm.bar.stripworspacenumbers:     yes
