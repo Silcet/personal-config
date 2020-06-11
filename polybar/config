@@ -27,6 +27,37 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
+
+[i3-wm]
+background = ${xrdb:i3-wm.bar.background.color:#222}
+background-alt = ${xrdb:i3-wm.bar.background.color:#222}
+statusline = ${xrdb:i3-wm.bar.statusline.color:#222}
+separator = ${xrdb:i3-wm.bar.separator.color:#222}
+
+focused-border = ${xrdb:i3-wm.client.focused.color.border:#222}
+focused-background = ${xrdb:i3-wm.client.focused.color.background:#222}
+focused-text = ${xrdb:i3-wm.client.focused.color.text:#222}
+focused-indicator = ${xrdb:i3-wm.client.focused.color.indicator:#222}
+focused-child_border = ${xrdb:i3-wm.client.focused.color.child_border:#222}
+
+focused_inactive-border = ${xrdb:i3-wm.client.focused_inactive.color.border:#222}
+focused_inactive-background = ${xrdb:i3-wm.client.focused_inactive.color.background:#222}
+focused_inactive-text = ${xrdb:i3-wm.client.focused_inactive.color.text:#222}
+focused_inactive-indicator = ${xrdb:i3-wm.client.focused_inactive.color.indicator:#222}
+focused_inactive-child_border = ${xrdb:i3-wm.client.focused_inactive.color.child_border:#222}
+
+unfocused-border = ${xrdb:i3-wm.client.unfocused.color.border:#222}
+unfocused-background = ${xrdb:i3-wm.client.unfocused.color.background:#222}
+unfocused-text = ${xrdb:i3-wm.client.unfocused.color.text:#222}
+unfocused-indicator = ${xrdb:i3-wm.client.unfocused.color.indicator:#222}
+unfocused-child_border = ${xrdb:i3-wm.client.unfocused.color.child_border:#222}
+
+urgent-border = ${xrdb:i3-wm.client.urgent.color.border:#222}
+urgent-background = ${xrdb:i3-wm.client.urgent.color.background:#222}
+urgent-text = ${xrdb:i3-wm.client.urgent.color.text:#222}
+urgent-indicator = ${xrdb:i3-wm.client.urgent.color.indicator:#222}
+urgent-child_border = ${xrdb:i3-wm.client.urgent.color.child_border:#222}
+
 [bar/example]
 monitor = ${env:MONITOR:HDMI-1}
 width = 100%
@@ -36,8 +67,8 @@ height = 35
 radius = 0.0
 fixed-center = false
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = ${i3-wm.background}
+foreground = ${i3-wm.statusline}
 
 line-size = 3
 line-color = #f00
@@ -119,30 +150,30 @@ label-mode-background = ${xrdb:i3-wm.bar.background.color:#222}
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-foreground = ${xrdb:i3-wm.bar.workspace.focused.text.color:#222}
-label-focused-background = ${xrdb:i3-wm.bar.workspace.focused.background.color:#222}
-label-focused-underline= ${xrdb:i3-wm.bar.workspace.focused.text.color:#222}
+label-focused-foreground = ${i3-wm.focused-text}
+label-focused-background = ${i3-wm.focused-background}
+label-focused-underline= ${i3-wm.focused-indicator}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
-label-unfocused-foreground = ${xrdb:i3-wm.bar.workspace.inactive.text.color:#222}
-label-unfocused-background = ${xrdb:i3-wm.bar.workspace.inactive.background.color:#222}
-label-unfocused-underline= ${xrdb:i3-wm.bar.workspace.inactive.text.color:#222}
+label-unfocused-foreground = ${i3-wm.unfocused-text}
+label-unfocused-background = ${i3-wm.unfocused-background}
+label-unfocused-underline = ${i3-wm.unfocused-indicator}
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
-label-visible-foreground = ${xrdb:i3-wm.bar.workspace.active.text.color:#222}
-label-visible-background = ${xrdb:i3-wm.bar.workspace.active.background.color:#222}
-label-visible-underline = ${xrdb:i3-wm.bar.workspace.active.text.color:#222}
+label-visible-foreground = ${i3-wm.focused_inactive-text}
+label-visible-background = ${i3-wm.focused_inactive-child_border}
+label-visible-underline = ${i3-wm.focused_inactive-indicator}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
-label-urgent-foreground = ${xrdb:i3-wm.bar.workspace.urgent.text.color:#222}
-label-urgent-background = ${xrdb:i3-wm.bar.workspace.urgent.background.color:#222}
-label-urgent-underline = ${xrdb:i3-wm.bar.workspace.urgent.text.color:#222}
+label-urgent-foreground = ${i3-wm.urgent-text}
+label-urgent-background = ${i3-wm.urgent-background}
+label-urgent-underline = ${i3-wm.urgent-indicator}
 label-urgent-padding = 2
 
 ; Separator in between workspaces
