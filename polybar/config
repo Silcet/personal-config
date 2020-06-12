@@ -18,10 +18,8 @@
 
 [colors]
 background = ${xrdb:i3-wm.bar.background.color:#222}
-;background = #222
 background-alt = ${colors.background}
 foreground = ${xrdb:i3-wm.bar.statusline.color:#222}
-;foreground = #dfdfdf
 foreground-alt = ${colors.foreground}
 primary = #ffb52a
 secondary = #e60053
@@ -30,38 +28,29 @@ alert = #bd2c40
 
 [i3-wm]
 background = ${xrdb:i3-wm.bar.background.color:#222}
-background-alt = ${xrdb:i3-wm.bar.background.color:#222}
 statusline = ${xrdb:i3-wm.bar.statusline.color:#222}
 separator = ${xrdb:i3-wm.bar.separator.color:#222}
 
-focused-border = ${xrdb:i3-wm.client.focused.color.border:#222}
-focused-background = ${xrdb:i3-wm.client.focused.color.background:#222}
-focused-text = ${xrdb:i3-wm.client.focused.color.text:#222}
-focused-indicator = ${xrdb:i3-wm.client.focused.color.indicator:#222}
-focused-child_border = ${xrdb:i3-wm.client.focused.color.child_border:#222}
+focused-border = ${xrdb:i3-wm.bar.workspace.focused.border.color:#222}
+focused-background = ${xrdb:i3-wm.bar.workspace.focused.background.color:#222}
+focused-text = ${xrdb:i3-wm.bar.workspace.focused.text.color:#222}
 
-focused_inactive-border = ${xrdb:i3-wm.client.focused_inactive.color.border:#222}
-focused_inactive-background = ${xrdb:i3-wm.client.focused_inactive.color.background:#222}
-focused_inactive-text = ${xrdb:i3-wm.client.focused_inactive.color.text:#222}
-focused_inactive-indicator = ${xrdb:i3-wm.client.focused_inactive.color.indicator:#222}
-focused_inactive-child_border = ${xrdb:i3-wm.client.focused_inactive.color.child_border:#222}
+focused_inactive-border = ${xrdb:i3-wm.bar.workspace.active.border.color:#222}
+focused_inactive-background = ${xrdb:i3-wm.bar.workspace.active.background.color:#222}
+focused_inactive-text = ${xrdb:i3-wm.bar.workspace.active.text.color:#222}
 
-unfocused-border = ${xrdb:i3-wm.client.unfocused.color.border:#222}
-unfocused-background = ${xrdb:i3-wm.client.unfocused.color.background:#222}
-unfocused-text = ${xrdb:i3-wm.client.unfocused.color.text:#222}
-unfocused-indicator = ${xrdb:i3-wm.client.unfocused.color.indicator:#222}
-unfocused-child_border = ${xrdb:i3-wm.client.unfocused.color.child_border:#222}
+unfocused-border = ${xrdb:i3-wm.bar.workspace.inactive.border.color:#222}
+unfocused-background = ${xrdb:i3-wm.bar.workspace.inactive.background.color:#222}
+unfocused-text = ${xrdb:i3-wm.bar.workspace.inactive.text.color:#222}
 
-urgent-border = ${xrdb:i3-wm.client.urgent.color.border:#222}
-urgent-background = ${xrdb:i3-wm.client.urgent.color.background:#222}
-urgent-text = ${xrdb:i3-wm.client.urgent.color.text:#222}
-urgent-indicator = ${xrdb:i3-wm.client.urgent.color.indicator:#222}
-urgent-child_border = ${xrdb:i3-wm.client.urgent.color.child_border:#222}
+urgent-border = ${xrdb:i3-wm.bar.workspace.urgent.border.color:#222}
+urgent-background = ${xrdb:i3-wm.bar.workspace.urgent.background.color:#222}
+urgent-text = ${xrdb:i3-wm.bar.workspace.urgent.text.color:#222}
 
 [bar/example]
 monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 35
+height = 30
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
@@ -70,7 +59,7 @@ fixed-center = false
 background = ${i3-wm.background}
 foreground = ${i3-wm.statusline}
 
-line-size = 3
+line-size = 1
 line-color = #f00
 
 border-size = 0
@@ -80,24 +69,20 @@ padding-left = 0
 padding-right = 2
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
-;font-0 = fixed:pixelsize=12;1
-font-0 = "JetBrains Mono Medium:size=11;1"
-;font-1 = unifont:fontformat=truetype:size=12:antialias=false;0
-;font-2 = siji:pixelsize=12;1
+font-0 = "JetBrains Mono Medium:size=11;3"
 font-1 = "Font Awesome 5 Free:pixelsize=12;3"
 font-2 = "Font Awesome 5 Free Solid:pixelsize=12;3"
 font-3 = "Font Awesome 5 Brands Regular:pixelsize=12;3"
 
 
 modules-left = i3
-modules-center = 
-modules-right = pulseaudio xkeyboard memory cpu wlan eth battery temperature date
+modules-center = date
+modules-right = pulseaudio cpu temperature memory wlan eth battery
 
 tray-position = ${env:TRAY_POSITION:right}
-tray-padding = 2
-;tray-background = #0063ff
+tray-padding = 0
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -123,15 +108,12 @@ blacklist-0 = num lock
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
-label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
 
 [module/i3]
 type = internal/i3
@@ -152,29 +134,29 @@ label-mode-background = ${xrdb:i3-wm.bar.background.color:#222}
 label-focused = %name%
 label-focused-foreground = ${i3-wm.focused-text}
 label-focused-background = ${i3-wm.focused-background}
-label-focused-underline= ${i3-wm.focused-indicator}
+label-focused-underline= ${i3-wm.focused-border}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
 label-unfocused-foreground = ${i3-wm.unfocused-text}
 label-unfocused-background = ${i3-wm.unfocused-background}
-label-unfocused-underline = ${i3-wm.unfocused-indicator}
-label-unfocused-padding = 2
+label-unfocused-underline = ${i3-wm.unfocused-border}
+label-unfocused-padding = 1
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
 label-visible-foreground = ${i3-wm.focused_inactive-text}
-label-visible-background = ${i3-wm.focused_inactive-child_border}
-label-visible-underline = ${i3-wm.focused_inactive-indicator}
+label-visible-background = ${i3-wm.focused_inactive-background}
+label-visible-underline = ${i3-wm.focused_inactive-border}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
 label-urgent-foreground = ${i3-wm.urgent-text}
 label-urgent-background = ${i3-wm.urgent-background}
-label-urgent-underline = ${i3-wm.urgent-indicator}
-label-urgent-padding = 2
+label-urgent-underline = ${i3-wm.urgent-border}
+label-urgent-padding = 1
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -219,9 +201,8 @@ enable-scroll = true
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = ""
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
 label = %percentage:2%%
 
 [module/memory]
@@ -229,7 +210,6 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
 label = %percentage_used%%
 
 [module/wlan]
@@ -238,7 +218,6 @@ interface = wlp0s20f3
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
 label-connected = %essid%
 
 format-disconnected =
@@ -259,14 +238,12 @@ type = internal/network
 interface = enx3ce1a1440ddc
 interval = 3.0
 
-format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
@@ -282,7 +259,6 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
 
 label = %date% %time%
 
@@ -298,7 +274,7 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 
 label-muted = 
-label-muted-foreground = #666
+label-muted-foreground = #CBCCC6
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -323,15 +299,23 @@ battery = BAT0
 adapter = ADP1
 full-at = 98
 
+bar-capacity-foreground-0 = #ff5555
+bar-capacity-foreground-1 = #f5a70a
+bar-capacity-foreground-2 = #55aa55
+bar-capacity-foreground-3 = #55aa55
+bar-capacity-foreground-4 = #55aa55
+bar-capacity-foreground-5 = #55aa55
+bar-capacity-foreground-6 = #55aa55
+bar-capacity-width = 10
+bar-capacity-indicator = |
+bar-capacity-fill = ─
+bar-capacity-empty = ─
+
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
 
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging = <bar-capacity> <label-discharging>
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+format-full = <ramp-capacity>
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -357,9 +341,7 @@ base-temperature = 70
 warn-temperature = 85
 
 format = <ramp> <label>
-format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
 label-warn = %temperature-c%
