@@ -1,4 +1,4 @@
-! Colors
+!! Colors
 URxvt*foreground:       color_base0
 URxvt*background:       color_base03
 URxvt*cursorColor:      color_base0
@@ -19,20 +19,26 @@ URxvt*color13:          color_magenta
 URxvt*color14:          color_ltcyan
 URxvt*color15:          color_base3
 
-! Fonts
+!! Fonts
 URxvt*font:             xft:JetBrains Mono:style=Regular:pixelsize=16:antialias=true:autohint=true
 URxvt*boldFont:         xft:JetBrains Mono:style=Bold:pixelsize=16:antialias=true:autohint=true
 URxvt*italicfont:       xft:JetBrains Mono:style=Italic:pixelsize=16:antialias=true:autohint=true
 URxvt*boldItalicFont:   xft:JetBrains Mono:style=Bold Italic:pixelsize=16:antialias=true:autohint=true
 URxvt*letterSpace:      0
 URxvt*lineSpace:        0
+
+!! Others
 !URxvt*geometry:         94x24
+URxvt*scrollTtyKeypress: false
+URxvt*scrollTtyOutput:  false
+URxvt*scrollWithBuffer: false
+URxvt*skipScroll:       true
+URxvt*scrollBar:        false
+URxvt*scrollBar_right:  false
 URxvt*internalBorder:   2
 URxvt*cursorBlink:      true
 URxvt*cursorUnderline:  false
 URxvt*saveline:         1000000
-URxvt*scrollBar:        false
-URxvt*scrollBar_right:  false
 URxvt*urgentOnBell:     true
 URxvt*depth:            24
 URxvt*iso14755:         false
