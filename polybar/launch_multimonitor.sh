@@ -20,9 +20,11 @@
         export TRAY_POSITION=none
         if [[ $m == $tray_output ]]; then
             TRAY_POSITION=right
+            polybar --reload main </dev/null >/var/tmp/polybar-$m.log 2>&1 200>&- &
+            disown
+        else
+            polybar --reload secondary </dev/null >/var/tmp/polybar-$m.log 2>&1 200>&- &
+            disown
         fi
-
-        polybar --reload example </dev/null >/var/tmp/polybar-$m.log 2>&1 200>&- &
-        disown
     done
 ) 200>/var/tmp/polybar-launch.lock

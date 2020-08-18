@@ -543,4 +543,7 @@ exec --no-startup-id /usr/bin/nm-applet &
 # Launch flameshot
 exec --no-startup-id /bin/bash -c "sleep 10; /usr/bin/flameshot &"
 
-exec_always --no-startup-id $HOME/.config/polybar/launch_multimonitor.sh
+# Make picture-in-picture work in all workspaces
+for_window [title="Picture-in-Picture"] sticky enable
+
+#exec_always --no-startup-id /usr/bin/autorandr --change --force 
