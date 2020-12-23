@@ -13,5 +13,5 @@
 #include "/home/cmg/.config/regolith/styles/urxvt"
 #include "/home/cmg/.config/regolith/styles/i3-wm-nopango"
 #include "/etc/regolith/styles/i3xrocks"
-#include "/etc/regolith/styles/rofi"
+#include "/home/cmg/.config/regolith/styles/rofi"
 #include "/etc/regolith/styles/gnome"

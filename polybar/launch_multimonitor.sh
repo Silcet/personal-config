@@ -10,7 +10,7 @@
     tray_output=eDP-1-1
 
     for m in $outputs; do
-        if [[ $m == "DP-0.2" ]]; then
+        if [[ $m == "DP-0.3" || $m == "DP-2" ]]; then
             tray_output=$m
         fi
     done

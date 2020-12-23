@@ -17,35 +17,34 @@
 ;==========================================================
 
 [colors]
-background = ${xrdb:i3-wm.bar.background.color:#222}
+background = ${xrdb:color0:#222}
 background-alt = ${colors.background}
-foreground = ${xrdb:i3-wm.bar.statusline.color:#222}
+foreground = ${xrdb:color7:#DDD}
 foreground-alt = ${colors.foreground}
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
-
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color3:#DDD}
+alert = ${xrdb:color2:#222}
 
 [i3-wm]
-background = ${xrdb:i3-wm.bar.background.color:#222}
-statusline = ${xrdb:i3-wm.bar.statusline.color:#222}
-separator = ${xrdb:i3-wm.bar.separator.color:#222}
+background = ${xrdb:color0:#222}
+statusline = ${xrdb:color5:#DDD}
+separator = ${xrdb:color13:#222}
 
-focused-border = ${xrdb:i3-wm.bar.workspace.focused.border.color:#222}
-focused-background = ${xrdb:i3-wm.bar.workspace.focused.background.color:#222}
-focused-text = ${xrdb:i3-wm.bar.workspace.focused.text.color:#222}
+focused-border = ${xrdb:color3:#222}
+focused-background = ${xrdb:color3:#222}
+focused-text = ${xrdb:color5:#DDD}
 
-focused_inactive-border = ${xrdb:i3-wm.bar.workspace.active.border.color:#222}
-focused_inactive-background = ${xrdb:i3-wm.bar.workspace.active.background.color:#222}
-focused_inactive-text = ${xrdb:i3-wm.bar.workspace.active.text.color:#222}
+focused_inactive-border = ${xrdb:color3:#222}
+focused_inactive-background = ${xrdb:color3:#222}
+focused_inactive-text = ${xrdb:color1:#DDD}
 
-unfocused-border = ${xrdb:i3-wm.bar.workspace.inactive.border.color:#222}
-unfocused-background = ${xrdb:i3-wm.bar.workspace.inactive.background.color:#222}
-unfocused-text = ${xrdb:i3-wm.bar.workspace.inactive.text.color:#222}
+unfocused-border = ${xrdb:color0:#222}
+unfocused-background = ${xrdb:color0:#222}
+unfocused-text = ${xrdb:color3:#DDD}
 
-urgent-border = ${xrdb:i3-wm.bar.workspace.urgent.border.color:#222}
-urgent-background = ${xrdb:i3-wm.bar.workspace.urgent.background.color:#222}
-urgent-text = ${xrdb:i3-wm.bar.workspace.urgent.text.color:#222}
+urgent-border = ${xrdb:color1:#222}
+urgent-background = ${xrdb:color1:#222}
+urgent-text = ${xrdb:color2:#DDD}
 
 [bar/main]
 monitor = ${env:MONITOR:HDMI-1}
@@ -56,8 +55,8 @@ height = 30
 radius = 0.0
 fixed-center = false
 
-background = ${i3-wm.background}
-foreground = ${i3-wm.statusline}
+background = ${colors.background}
+foreground = ${colors.foreground}
 
 line-size = 1
 line-color = #f00
@@ -107,8 +106,8 @@ height = 30
 radius = 0.0
 fixed-center = false
 
-background = ${i3-wm.background}
-foreground = ${i3-wm.statusline}
+background = ${colors.background}
+foreground = ${colors.foreground}
 
 line-size = 1
 line-color = #f00
@@ -178,8 +177,10 @@ pin-workspaces = true
 strip-wsnumbers = true
 
 label-mode-padding = 2
-label-mode-foreground = ${xrdb:i3-wm.bar.statusline.color:#222}
-label-mode-background = ${xrdb:i3-wm.bar.background.color:#222}
+;label-mode-foreground = ${xrdb:i3-wm.bar.statusline.color:#222}
+label-mode-foreground = ${i3-wm.statusline:#222}
+;label-mode-background = ${xrdb:i3-wm.bar.background.color:#222}
+label-mode-background = ${i3-wm.background:#222}
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
@@ -200,7 +201,7 @@ label-visible = %name%
 label-visible-foreground = ${i3-wm.focused_inactive-text}
 label-visible-background = ${i3-wm.focused_inactive-background}
 label-visible-underline = ${i3-wm.focused_inactive-border}
-label-visible-padding = ${self.label-focused-padding}
+label-visible-padding = 1
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
@@ -387,7 +388,8 @@ animation-discharging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 6
+;thermal-zone = 7
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input
 base-temperature = 70
 warn-temperature = 85
 

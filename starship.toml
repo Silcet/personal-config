@@ -1,0 +1,53 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+# Replace the "❯" symbol in the prompt with "➜"
+# [character]      # The name of the module we are configuring is "character"
+# symbol = "➜"     # The "symbol" segment is being set to "➜"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[line_break]
+disabled = true
+
+[python]
+disabled = true
+
+[time]
+disabled = true
+
+[hostname]
+disabled = false
+
+prompt_order = [
+    "username",
+    "hostname",
+    "directory",
+    "git_branch",
+    "git_commit",
+    "git_state",
+    "git_status",
+    "docker_context",
+    "cmd_duration",
+    "jobs",
+    "character",
+]
+
+[username]
+show_always = true
+
+[directory]
+prefix = "❯ "
+truncation_length = 0
+
+[cmd_duration]
+prefix = "❯ "
+
+[git_status]
+show_sync_count = true
+stashed = ""
+renamed = ""
+conflicted = ""
+
